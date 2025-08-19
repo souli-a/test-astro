@@ -43,17 +43,12 @@ import '../styles/index.css';
   <LenisWrapper client:only="react">
     <div class="text-dark bg-light min-h-dvh dark:text-light dark:bg-dark">
       <Home client:load />
-      <AboutUs client:load />
-      <ServicesOverview client:load />
-      <ProcessSteps client:load />
-      <Contact client:load />
+      <AboutUs client:visible />
+      <ServicesOverview client:visible />
+      <ProcessSteps client:visible />
+      <Contact client:visible />
       <Footer />
     </div>
   </LenisWrapper>
-    <script>
-      import initMagneticEffect from '../utils/magneticElement.ts';
-      document.addEventListener('astro:page-load', initMagneticEffect);
-    </script>
-  </body>
 	</body>
 </html>
