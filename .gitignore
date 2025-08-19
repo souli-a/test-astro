@@ -9,3 +9,15 @@ pnpm-debug.log*
 .env.production
 .DS_Store
 .idea/
+logs
+*.log
+lerna-debug.log*
+dist-ssr
+*.local
+.vscode/*
+!.vscode/extensions.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

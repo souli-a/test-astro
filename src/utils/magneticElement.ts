@@ -59,4 +59,4 @@ const initButtonEffects = (element: Element) => {
   });
 };
 
-initMagneticEffect();
+export default initMagneticEffect;

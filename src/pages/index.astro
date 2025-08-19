@@ -1,18 +1,12 @@
 ---
-// src/pages/index.astro
-import LenisWrapper from './components/LenisWrapper.tsx';
-import Footer from './components/Footer.tsx';
-import AboutUs from './sections/AboutUs.tsx';
-import Contact from './sections/Contact.tsx';
-import Home from './sections/Home.tsx';
-import ProcessSteps from './sections/ProcessSteps.tsx';
-import ServicesOverview from './sections/ServicesOverview.tsx';
-
-// Import global styles and scripts
-import './styles/index.css';
-import './utils/magneticElement.ts';
-
-// TODO: maybe i need ../
+import LenisWrapper from '../components/LenisWrapper.tsx';
+import Footer from '../components/Footer.tsx';
+import AboutUs from '../sections/AboutUs.tsx';
+import Contact from '../sections/Contact.tsx';
+import Home from '../sections/Home.tsx';
+import ProcessSteps from '../sections/ProcessSteps.tsx';
+import ServicesOverview from '../sections/ServicesOverview.tsx';
+import '../styles/index.css';
 ---
 <html lang="fr">
   <head>
@@ -48,18 +42,16 @@ import './utils/magneticElement.ts';
 	<body>
   <LenisWrapper client:only="react">
     <div class="text-dark bg-light min-h-dvh dark:text-light dark:bg-dark">
-      <Home />
-      <AboutUs />
-      <ServicesOverview />
-      <ProcessSteps />
-      <Contact />
+      <Home client:load />
+      <AboutUs client:load />
+      <ServicesOverview client:load />
+      <ProcessSteps client:load />
+      <Contact client:load />
       <Footer />
     </div>
   </LenisWrapper>
-
     <script>
-      import gsap from 'gsap';
-      const initMagneticEffect = () => { /* ... (paste your magneticElement.ts logic here) ... */ };
+      import initMagneticEffect from '../utils/magneticElement.ts';
       document.addEventListener('astro:page-load', initMagneticEffect);
     </script>
   </body>
